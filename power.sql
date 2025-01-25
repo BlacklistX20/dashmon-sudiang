@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 25, 2025 at 01:36 AM
+-- Generation Time: Jan 25, 2025 at 02:31 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `it` (
   `current` double(15,2) NOT NULL,
   `frequency` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=287 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `lvmdp` (
   `current` double(15,2) NOT NULL,
   `frequency` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=285 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `p205` (
   `current` double(15,2) NOT NULL,
   `frequency` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=287 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `p236` (
   `current` double(15,2) NOT NULL,
   `frequency` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=287 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -101,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `p305` (
   `current` double(15,2) NOT NULL,
   `frequency` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=287 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -117,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `p310` (
   `current` double(15,2) NOT NULL,
   `frequency` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=287 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -133,7 +133,7 @@ CREATE TABLE IF NOT EXISTS `p429` (
   `current` double(15,2) NOT NULL,
   `frequency` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=287 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -151,7 +151,34 @@ CREATE TABLE IF NOT EXISTS `per_second` (
   `frequency` double(15,2) NOT NULL,
   `status` varchar(1) COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Truncate table before insert `per_second`
+--
+
+TRUNCATE TABLE `per_second`;
+--
+-- Dumping data for table `per_second`
+--
+
+INSERT INTO `per_second` (`id`, `name`, `last_update`, `loads`, `current`, `voltage`, `frequency`, `status`) VALUES
+(1, 'pue', '2025-01-21 09:35:10', 1.67, 0.00, 0.00, 0.00, 'D'),
+(2, 'lvmdp', '2025-01-21 09:35:10', 586.01, 891.11, 219.22, 50.03, 'C'),
+(3, 'it', '2025-01-21 09:35:10', 349.11, 531.32, 220.80, 50.03, 'D'),
+(4, 'recti', '2025-01-21 09:35:11', 238.73, 365.06, 218.09, 50.03, 'D'),
+(5, 'ups', '2025-01-21 09:35:10', 110.29, 166.24, 223.06, 50.03, 'C'),
+(6, 'p205', '2025-01-21 09:35:10', 64.80, 98.96, 218.30, 50.02, 'C'),
+(7, 'p236', '2025-01-21 09:35:10', 48.88, 75.04, 216.80, 50.03, 'C'),
+(8, 'p305', '2025-01-21 09:35:10', 42.32, 64.72, 218.50, 50.02, 'C'),
+(9, 'p310', '2025-01-21 09:35:10', 15.65, 23.93, 218.43, 50.03, 'D'),
+(10, 'p429', '2025-01-21 09:35:10', 67.08, 102.60, 218.30, 50.01, 'C'),
+(11, 'ups202', '2025-01-21 09:35:10', 23.91, 36.11, 219.99, 50.03, 'C'),
+(12, 'ups203', '2025-01-21 09:35:10', 21.38, 32.53, 220.01, 50.03, 'C'),
+(13, 'ups301', '2025-01-21 09:35:10', 14.87, 21.63, 229.47, 50.02, 'C'),
+(14, 'ups302', '2025-01-21 09:35:10', 11.20, 16.29, 229.40, 50.02, 'C'),
+(15, 'ups501', '2025-01-21 09:35:10', 19.70, 30.21, 219.95, 50.03, 'C'),
+(16, 'ups502', '2025-01-21 09:35:11', 19.32, 29.41, 219.55, 50.03, 'C');
 
 -- --------------------------------------------------------
 
@@ -169,7 +196,7 @@ CREATE TABLE IF NOT EXISTS `pue` (
   `it` double(15,2) NOT NULL,
   `facility` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=304 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -185,7 +212,7 @@ CREATE TABLE IF NOT EXISTS `recti` (
   `current` double(15,2) NOT NULL,
   `frequency` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=287 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -201,7 +228,7 @@ CREATE TABLE IF NOT EXISTS `ups` (
   `current` double(15,2) NOT NULL,
   `frequency` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=287 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -217,7 +244,7 @@ CREATE TABLE IF NOT EXISTS `ups202` (
   `current` double(15,2) NOT NULL,
   `frequency` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=287 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -233,7 +260,7 @@ CREATE TABLE IF NOT EXISTS `ups203` (
   `current` double(15,2) NOT NULL,
   `frequency` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=287 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -249,7 +276,7 @@ CREATE TABLE IF NOT EXISTS `ups301` (
   `current` double(15,2) NOT NULL,
   `frequency` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=287 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -265,7 +292,7 @@ CREATE TABLE IF NOT EXISTS `ups302` (
   `current` double(15,2) NOT NULL,
   `frequency` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=287 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -281,7 +308,7 @@ CREATE TABLE IF NOT EXISTS `ups501` (
   `current` double(15,2) NOT NULL,
   `frequency` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=286 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -297,7 +324,7 @@ CREATE TABLE IF NOT EXISTS `ups502` (
   `current` double(15,2) NOT NULL,
   `frequency` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=287 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

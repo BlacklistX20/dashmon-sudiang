@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 25, 2025 at 01:36 AM
+-- Generation Time: Jan 25, 2025 at 02:31 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `battery.3` (
   `t_avg` double(15,2) NOT NULL,
   `h_avg` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=243 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `battery.4` (
   `t_avg` double(15,2) NOT NULL,
   `h_avg` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=285 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -97,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `bss.4` (
   `t_avg` double(15,2) NOT NULL,
   `h_avg` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=286 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -137,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `core.3` (
   `t_avg` double(15,2) NOT NULL,
   `h_avg` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=243 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -159,7 +159,7 @@ CREATE TABLE IF NOT EXISTS `csps.2` (
   `t_avg` double(15,2) NOT NULL,
   `h_avg` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=243 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -185,7 +185,7 @@ CREATE TABLE IF NOT EXISTS `data_center.5` (
   `t_avg` double(15,2) NOT NULL,
   `h_avg` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=237 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -227,7 +227,7 @@ CREATE TABLE IF NOT EXISTS `interkoneksi.4` (
   `t_avg` double(15,2) NOT NULL,
   `h_avg` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=281 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -253,7 +253,7 @@ CREATE TABLE IF NOT EXISTS `invas.3` (
   `t_avg` double(15,2) NOT NULL,
   `h_avg` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=237 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -273,7 +273,7 @@ CREATE TABLE IF NOT EXISTS `mkios.3` (
   `t_avg` double(15,2) NOT NULL,
   `h_avg` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=243 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -299,7 +299,7 @@ CREATE TABLE IF NOT EXISTS `msc.2` (
   `t_avg` double(15,2) NOT NULL,
   `h_avg` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=237 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -321,7 +321,7 @@ CREATE TABLE IF NOT EXISTS `ocs.3` (
   `t_avg` double(15,2) NOT NULL,
   `h_avg` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=243 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -355,7 +355,40 @@ CREATE TABLE IF NOT EXISTS `per_second` (
   `hum` double(15,2) NOT NULL,
   `status` varchar(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Truncate table before insert `per_second`
+--
+
+TRUNCATE TABLE `per_second`;
+--
+-- Dumping data for table `per_second`
+--
+
+INSERT INTO `per_second` (`id`, `name`, `last_update`, `temp`, `hum`, `status`) VALUES
+(1, 'battery 2', '2024-11-28 21:41:34', 0.00, 0.00, 'D'),
+(2, 'recty 2', '2024-11-28 21:41:34', 0.00, 0.00, 'D'),
+(3, 'msc', '2024-11-28 21:41:34', 0.00, 0.00, 'D'),
+(4, 'csps', '2024-11-28 21:41:34', 0.00, 0.00, 'D'),
+(5, 'battery 3', '2024-11-28 21:41:34', 0.00, 0.00, 'D'),
+(6, 'recty 3', '2024-11-28 21:41:34', 0.00, 0.00, 'D'),
+(7, 'invas', '2024-11-28 21:41:34', 0.00, 0.00, 'D'),
+(8, 'core', '2024-11-28 21:41:34', 0.00, 0.00, 'D'),
+(9, 'mkios', '2024-11-28 21:41:34', 0.00, 0.00, 'D'),
+(10, 'ocs', '2024-11-28 21:41:34', 0.00, 0.00, 'D'),
+(11, 'battery 4', '2025-01-21 09:35:12', 16.00, 89.10, 'C'),
+(12, 'recty 4', '2025-01-21 09:35:10', 20.00, 97.77, 'C'),
+(13, 'bss', '2025-01-21 09:35:10', 30.00, 61.65, 'C'),
+(14, 'interkoneksi', '2025-01-21 09:35:10', 33.00, 70.55, 'C'),
+(15, 'transmisi', '2025-01-21 09:35:10', 0.00, 0.00, 'D'),
+(16, 'utility a', '2024-11-28 21:41:34', 0.00, 0.00, 'D'),
+(17, 'utility b', '2024-11-28 21:41:34', 0.00, 0.00, 'D'),
+(18, 'data center', '2024-11-28 21:41:34', 0.00, 0.00, 'D'),
+(19, 'pengembangan', '2024-11-28 21:41:34', 0.00, 0.00, 'D'),
+(20, 'containment', '2024-11-28 21:41:34', 0.00, 0.00, 'D'),
+(21, 'genset', '2024-12-06 23:06:50', 0.00, 0.00, 'D'),
+(22, 'trafo', '2024-12-06 23:06:50', 0.00, 0.00, 'D');
 
 -- --------------------------------------------------------
 
@@ -375,7 +408,7 @@ CREATE TABLE IF NOT EXISTS `recti.2` (
   `t_avg` double(15,2) NOT NULL,
   `h_avg` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=243 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -395,7 +428,7 @@ CREATE TABLE IF NOT EXISTS `recti.3` (
   `t_avg` double(15,2) NOT NULL,
   `h_avg` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=243 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -415,7 +448,7 @@ CREATE TABLE IF NOT EXISTS `recti.4` (
   `t_avg` double(15,2) NOT NULL,
   `h_avg` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=285 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -435,7 +468,7 @@ CREATE TABLE IF NOT EXISTS `trafo` (
   `t_avg` double(15,2) NOT NULL,
   `h_avg` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=243 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -461,7 +494,7 @@ CREATE TABLE IF NOT EXISTS `transmisi.4` (
   `t_avg` double(15,2) NOT NULL,
   `h_avg` double(15,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=237 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
