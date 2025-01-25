@@ -21,6 +21,7 @@
                <th>Lantai</th>
                <th>Ruangan</th>
                <th>Kategori</th>
+               <th>Nama</th>
                <th>Vendor</th>
                <th>Brand</th>
                <th>Type</th>
@@ -40,6 +41,7 @@
                   <td><?= $f['floor']; ?></td>
                   <td><?= $f['room']; ?></td>
                   <td><?= $f['category']; ?></td>
+                  <td><?= $f['name']; ?></td>
                   <td><?= $f['vendor']; ?></td>
                   <td><?= $f['brand']; ?></td>
                   <td><?= $f['type']; ?></td>
@@ -121,6 +123,11 @@
                      <div class="invalid-feedback">Pilih Kategori</div>
                   </div>
                   <div class="mb-3 col-md-4">
+                     <label for="nameAdd" class="form-label">Nama</label>
+                     <input type="text" class="form-control" id="nameAdd" name="name" required />
+                     <div class="invalid-feedback">Masukkan Nama (Jika tidak ada isi dengan -)</div>
+                  </div>
+                  <div class="mb-3 col-md-4">
                      <label for="vendorAdd" class="form-label">Vendor</label>
                      <input type="text" class="form-control" id="vendorAdd" name="vendor" required />
                      <div class="invalid-feedback">Masukkan Nama Vendor (Jika tidak ada isi dengan -)</div>
@@ -161,7 +168,7 @@
                   </div>
                   <div class="mb-3 col-md-4">
                      <label for="installAdd" class="form-label">Tahun Instalasi</label>
-                     <input type="date" class="form-control" id="installAdd" name="install" require />
+                     <input type="text" class="form-control" id="installAdd" name="install" require />
                      <div class="invalid-feedback">Masukkan Tahun Instalasi</div>
                   </div>
                   <div class="mb-3 col-md-4">
@@ -214,7 +221,9 @@
                      <select class="form-select" name="category" id="categoryEdit" required>
                         <option selected disabled value="">-- Pilih Kategori --</option>
                         <option value="APAR">APAR</option>
-                        <option value="Abort">Abort</option>
+                        <option value="FM200">FM200</option>
+                        <option value="HYDRANT">HYDRANT</option>
+                        <!-- <option value="Abort">Abort</option>
                         <option value="Gas Discharge Sign Lamp">Gas Discharge Sign Lamp</option>
                         <option value="Horn">Horn</option>
                         <option value="Alarm Bell">Alarm Bell</option>
@@ -227,9 +236,14 @@
                         <option value="Dect Ion">Dect Ion</option>
                         <option value="Pressure Switch">Pressure Switch</option>
                         <option value="Electric Control Head">Electric Control Head</option>
-                        <option value="Nozzle">Nozzle</option>
+                        <option value="Nozzle">Nozzle</option> -->
                      </select>
                      <div class="invalid-feedback">Pilih Kategori</div>
+                  </div>
+                  <div class="mb-3 col-md-4">
+                     <label for="nameEdit" class="form-label">Nama</label>
+                     <input type="text" class="form-control" id="nameEdit" name="name" required />
+                     <div class="invalid-feedback">Masukkan Nama (Jika tidak ada isi dengan -)</div>
                   </div>
                   <div class="mb-3 col-md-4">
                      <label for="vendorEdit" class="form-label">Vendor</label>
@@ -272,7 +286,7 @@
                   </div>
                   <div class="mb-3 col-md-4">
                      <label for="installEdit" class="form-label">Tahun Instalasi</label>
-                     <input type="date" class="form-control" id="installEdit" name="install" require />
+                     <input type="text" class="form-control" id="installEdit" name="install" require />
                      <div class="invalid-feedback">Masukkan Tahun Instalasi</div>
                   </div>
                   <div class="mb-3 col-md-4">
@@ -321,10 +335,11 @@
             $('#floorEdit').val(data.floor).change();
             $('#roomEdit').val(data.room).change();
             $('#categoryEdit').val(data.category).change();
+            $('#nameEdit').val(data.name);
             $('#vendorEdit').val(data.vendor);
             $('#brandEdit').val(data.brand);
             $('#typeEdit').val(data.type);
-            $('#snEdit').val(data.sn);
+            $('#barcodeEdit').val(data.barcode);
             $('#quantityEdit').val(data.quantity);
             $('#conditionEdit').val(data.condition).change();
             $('#infoEdit').val(data.info);

@@ -138,13 +138,13 @@
                      <div class="invalid-feedback">Masukkan Keterangan (Jika tidak ada isi dengan -)</div>
                   </div>
                   <div class="mb-3 col-md-4">
-                     <label for="installAdd" class="form-label">Tanggal Instalasi</label>
-                     <input type="date" class="form-control" id="installAdd" name="install" required />
-                     <div class="invalid-feedback">Masukkan Tanggal Instalasi</div>
+                     <label for="installAdd" class="form-label">Tahun Instalasi</label>
+                     <input type="number" class="form-control" id="installAdd" name="install" required />
+                     <div class="invalid-feedback">Masukkan Tahun Instalasi</div>
                   </div>
                   <div class="mb-3 col-md-4">
                      <label for="maintananceAdd" class="form-label">Tanggal Maintanance Terakhir</label>
-                     <input type="date" class="form-control" id="maintananceAdd" name="maintanance" required />
+                     <input type="text" class="form-control" id="maintananceAdd" name="maintanance" required />
                      <div class="invalid-feedback">Masukkan Tanggal Maintanance Terakhir</div>
                   </div>
                </div>
@@ -231,13 +231,13 @@
                      <div class="invalid-feedback">Masukkan Keterangan (Jika tidak ada isi dengan -)</div>
                   </div>
                   <div class="mb-3 col-md-4">
-                     <label for="installEdit" class="form-label">Tanggal Instalasi</label>
-                     <input type="date" class="form-control" id="installEdit" name="install" required />
-                     <div class="invalid-feedback">Masukkan Tanggal Instalasi</div>
+                     <label for="installEdit" class="form-label">Tahun Instalasi</label>
+                     <input type="number" class="form-control" id="installEdit" name="install" required />
+                     <div class="invalid-feedback">Masukkan Tahun Instalasi</div>
                   </div>
                   <div class="mb-3 col-md-4">
                      <label for="maintananceEdit" class="form-label">Tanggal Maintanance Terakhir</label>
-                     <input type="date" class="form-control" id="maintananceEdit" name="maintanance" required />
+                     <input type="text" class="form-control" id="maintananceEdit" name="maintanance" required />
                      <div class="invalid-feedback">Masukkan Tanggal Maintanance Terakhir</div>
                   </div>
                </div>

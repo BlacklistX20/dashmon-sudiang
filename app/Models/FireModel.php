@@ -13,7 +13,7 @@ class FireModel extends Model
   protected $returnType       = 'array';
   protected $useSoftDeletes   = false;
 
-  protected $allowedFields    = ['floor', 'room', 'category', 'vendor', 'brand', 'type', 'condition', 'info', 'install', 'maintanance', 'updated_at'];
+  protected $allowedFields    = ['floor', 'room', 'category', 'name', 'vendor', 'brand', 'type', 'barcode', 'quantity', 'condition', 'info', 'install', 'maintanance', 'updated_at'];
 
   /**
    * Get data from the database

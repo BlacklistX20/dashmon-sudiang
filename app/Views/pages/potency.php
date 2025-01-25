@@ -70,8 +70,8 @@
         style="height: 40vh;">
         <i class='bx bxs-bed mb-3' style="font-size: 128px;"></i>
         <h1 class="mb-3">Tangki Cairan (<span id="potTank">0</span>)</h1>
-        <h4>Tangki Bulanan (<span id="potTankDaily">0</span>)</h4>
-        <h4>Tangki Harian (<span id="potTankMonthly">0</span>)</h4>
+        <h4>Tangki Harian (<span id="potTankDaily">0</span>)</h4>
+        <h4>Tangki Bulanan (<span id="potTankMonthly">0</span>)</h4>
       </div>
     </a>
   </div>
