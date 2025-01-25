@@ -145,6 +145,38 @@ function getFormattedTimes(data) {
 	});
 }
 
+function setCard(data, className) {
+	const card = $("#card" + className);
+	const disconnected = card.find("#disconnected");
+
+	if (data.status === 'D') {
+		disconnected.removeClass("invisible");
+		card.removeClass("text-bg-info text-bg-success text-bg-warning text-bg-danger");
+	} else if (data.status === 'C') {
+		disconnected.addClass("invisible");
+		card.removeClass("text-bg-info text-bg-success text-bg-warning text-bg-danger");
+		if (data.temp > 0 && data.temp < 17) {
+			card.addClass("text-bg-info");
+		} else if (data.temp >= 17 && data.temp < 27) {
+			card.addClass("text-bg-success");
+		} else if (data.temp >= 27 && data.temp < 32) {
+			card.addClass("text-bg-warning");
+		} else if (data.temp >= 32 && data.temp == 0) {
+			card.addClass("text-bg-danger");
+		}
+	}
+
+	if (data.temp !== undefined) {
+		$("#temp" + className).text(data.temp);
+	}
+	if (data.hum !== undefined) {
+		$("#hum" + className).text(data.hum);
+	}
+	if (data.last_update !== undefined) {
+		$("#date" + className).text(data.last_update);
+	}
+}
+
 export {
 	splitArrayData,
 	getMinData,
@@ -155,5 +187,6 @@ export {
 	tables,
 	toggleActive,
 	getDates,
-	getFormattedTimes
+	getFormattedTimes,
+	setCard,
 };

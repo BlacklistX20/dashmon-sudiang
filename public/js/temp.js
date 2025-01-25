@@ -5,6 +5,7 @@ $(document).ready(
 	},
 	startTime(),
 );
+import { setCard } from "./func.js";
 
 document.addEventListener('DOMContentLoaded', function () {
 	const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
@@ -13,37 +14,45 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 });
 
-function setCard(data, className) {
-	const card = $("#card" + className);
-	const disconnected = card.find("#disconnected");
+async function setLt2() {
+	let data = await $.ajax({
+		url: baseUrl + "data/temp/perSecond",
+		dataType: "json",
+	})
+	const batt2 = data[0];
+	const recti2 = data[1];
+	const msc = data[2];
+	const csps = data[3];
+	const genset = data[20];
+	const trafo = data[21];
 
-	if (data.status === 'D') {
-		disconnected.removeClass("invisible");
-		card.removeClass("text-bg-info text-bg-success text-bg-warning text-bg-danger");
-	} else if (data.status === 'C') {
-		disconnected.addClass("invisible");
-		card.removeClass("text-bg-info text-bg-success text-bg-warning text-bg-danger");
-		if (data.temp < 17) {
-			card.addClass("text-bg-info");
-		} else if (data.temp >= 17 && data.temp < 27) {
-			card.addClass("text-bg-success");
-		} else if (data.temp >= 27 && data.temp < 33) {
-			card.addClass("text-bg-warning");
-		} else if (data.temp >= 33 || data.temp == 0) {
-			card.addClass("text-bg-danger");
-		}
-	}
+	setCard(batt2, 'Batt2');
+	setCard(recti2, 'Recti2');
+	setCard(msc, 'Msc');
+	setCard(csps, 'Csps');
+	setCard(genset, 'Genset');
+	setCard(trafo, 'Trafo');
+};
 
-	if (data.temp !== undefined) {
-		$("#temp" + className).text(data.temp);
-	}
-	if (data.hum !== undefined) {
-		$("#hum" + className).text(data.hum);
-	}
-	if (data.last_update !== undefined) {
-		$("#date" + className).text(data.last_update);
-	}
-}
+async function setLt3() {
+	let data = await $.ajax({
+		url: baseUrl + "data/temp/perSecond",
+		dataType: "json",
+	})
+	const batt3 = data[4];
+	const recti3 = data[5];
+	const mkios = data[8];
+	const core = data[7];
+	const invas = data[6];
+	const ocs = data[9];
+
+	setCard(batt3, 'Batt3');
+	setCard(recti3, 'Recti3');
+	setCard(mkios, 'Mkios');
+	setCard(core, 'Core');
+	setCard(invas, 'Invas');
+	setCard(ocs, 'Ocs');
+};
 
 async function setLt4() {
 	let data = await $.ajax({
@@ -63,6 +72,27 @@ async function setLt4() {
 	setCard(trans, 'Trans');
 };
 
+async function setLt5() {
+	let data = await $.ajax({
+		url: baseUrl + "data/temp/perSecond",
+		dataType: "json",
+	})
+	const utilityA = data[15];
+	const utilityB = data[16];
+	const dataCenter = data[17];
+	const pengembangan = data[18];
+	const containment = data[19];
+
+	setCard(utilityA, 'UtilityA');
+	setCard(utilityB, 'UtilityB');
+	setCard(dataCenter, 'DC');
+	setCard(pengembangan, 'Peng');
+	setCard(containment, 'Cont');
+};
+
 setInterval(() => {
+	setLt2();
+	setLt3();
 	setLt4();
+	setLt5();
 }, 1000);
