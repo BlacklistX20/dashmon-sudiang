@@ -25,8 +25,8 @@
 	<script src="<?= base_url('datatables/datatables.min.js'); ?>"></script>
 
 	<!-- chart.js -->
-	<script src="<?= base_url('chart.js/dist/chart.umd.js') ?>"></script>
-	<script src="<?= base_url('chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.js') ?>"></script>
+	<script src="<?= base_url('node_modules/chart.js/dist/chart.umd.js') ?>"></script>
+	<script src="<?= base_url('node_modules/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.js') ?>"></script>
 </head>
 
 <body id="body-pd">

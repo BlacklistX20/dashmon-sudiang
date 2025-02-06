@@ -148,12 +148,17 @@ function getFormattedTimes(data) {
 function setCard(data, className) {
 	const card = $("#card" + className);
 	const disconnected = card.find("#disconnected");
+	const detail = card.find(".detailSensor")
 
 	if (data.status === 'D') {
 		disconnected.removeClass("invisible");
+		// detail.removeClass("btn-outline-white");
+		// detail.addClass("btn-outline-dark")
 		card.removeClass("text-bg-info text-bg-success text-bg-warning text-bg-danger");
 	} else if (data.status === 'C') {
 		disconnected.addClass("invisible");
+		// detail.removeClass("btn-outline-dark")
+		// detail.addClass("btn-outline-white")
 		card.removeClass("text-bg-info text-bg-success text-bg-warning text-bg-danger");
 		if (data.temp > 0 && data.temp < 17) {
 			card.addClass("text-bg-info");

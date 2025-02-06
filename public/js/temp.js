@@ -14,6 +14,37 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 });
 
+$(document).on('click', '.detailSensor', function() {
+	const id = $(this).data('id');
+	console.log('ID:', id);
+	// $.ajax({
+	// 	url: baseUrl + 'data/potency/cool/' + id,
+	// 	success: function(respond) {
+	// 		let data = respond;
+	// 		$("#deviceName").text(data.name);
+	// 		$("#barcodeEdit").val(data.barcode);
+	// 		$("#floorEdit").val(data.floor).change();
+	// 		$("#roomEdit").val(data.room).change();
+	// 		$("#categoryEdit").val(data.category).change();
+	// 		$("#nameEdit").val(data.name);
+	// 		$("#vendorEdit").val(data.vendor);
+	// 		$("#brandEdit").val(data.brand);
+	// 		$("#typeEdit").val(data.type);
+	// 		$("#compressorEdit").val(data.compressor).change();
+	// 		$("#flowEdit").val(data.flow).change();
+	// 		$("#capacityEdit").val(data.capacity);
+	// 		$("#conditionEdit").val(data.condition).change();
+	// 		$("#statusEdit").val(data.status).change();
+	// 		$("#agingEdit").val(data.aging).change();
+	// 		$("#infoEdit").val(data.info)
+	// 		$("#installEdit").val(data.install);
+	// 		$("#maintananceEdit").val(data.maintanance);
+	// 		$('#editForm').attr('action', baseUrl + 'data/potency/coolUpdate/' + id);
+	// 		$('#editModal').modal('show');
+	// 	},
+	// })
+});
+
 async function setLt2() {
 	let data = await $.ajax({
 		url: baseUrl + "data/temp/perSecond",
