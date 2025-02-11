@@ -182,6 +182,48 @@ function setCard(data, className) {
 	}
 }
 
+function addTableRows(num) {
+	let $tbody = $("#sensorDetail"); 
+	$tbody.empty();
+
+	for (let i = 1; i <= num; i++) {
+		 let row = `
+			  <tr>
+					<td>${i}</td>
+					<td id="temp${i}"></td>
+					<td id="hum${i}"></td>
+			  </tr>
+		 `;
+		 $tbody.append(row);
+	}
+}
+
+function extractDetails(input) {
+	let qty, floor = "", room, table;
+	
+	// Split by dash (-) to separate qty
+	let parts = input.split("-");
+	if (parts.length > 1) {
+		 qty = parseInt(parts[1]); // Extract qty (as number)
+	}
+
+	// Extract table name (before the dash) and convert to lowercase
+	table = parts[0].toLowerCase();
+
+	// Split by dot (.) to separate floor and room
+	let roomFloorParts = parts[0].split(".");
+	if (roomFloorParts.length > 1) {
+		 room = roomFloorParts[0]; // Extract room (before dot)
+		 floor = roomFloorParts[1]; // Extract floor (after dot)
+	} else {
+		 room = parts[0]; // If no dot exists, assign full part to room
+	}
+
+	// Replace underscores with spaces in room name
+	room = room.replace(/_/g, " ");
+
+	return { qty, floor, room, table };
+}
 export {
 	splitArrayData,
 	getMinData,
@@ -194,4 +236,6 @@ export {
 	getDates,
 	getFormattedTimes,
 	setCard,
+	addTableRows,
+	extractDetails,
 };

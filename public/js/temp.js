@@ -5,7 +5,7 @@ $(document).ready(
 	},
 	startTime(),
 );
-import { setCard } from "./func.js";
+import { addTableRows, extractDetails, setCard } from "./func.js";
 
 document.addEventListener('DOMContentLoaded', function () {
 	const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
@@ -16,33 +16,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
 $(document).on('click', '.detailSensor', function() {
 	const id = $(this).data('id');
-	console.log('ID:', id);
-	// $.ajax({
-	// 	url: baseUrl + 'data/potency/cool/' + id,
-	// 	success: function(respond) {
-	// 		let data = respond;
-	// 		$("#deviceName").text(data.name);
-	// 		$("#barcodeEdit").val(data.barcode);
-	// 		$("#floorEdit").val(data.floor).change();
-	// 		$("#roomEdit").val(data.room).change();
-	// 		$("#categoryEdit").val(data.category).change();
-	// 		$("#nameEdit").val(data.name);
-	// 		$("#vendorEdit").val(data.vendor);
-	// 		$("#brandEdit").val(data.brand);
-	// 		$("#typeEdit").val(data.type);
-	// 		$("#compressorEdit").val(data.compressor).change();
-	// 		$("#flowEdit").val(data.flow).change();
-	// 		$("#capacityEdit").val(data.capacity);
-	// 		$("#conditionEdit").val(data.condition).change();
-	// 		$("#statusEdit").val(data.status).change();
-	// 		$("#agingEdit").val(data.aging).change();
-	// 		$("#infoEdit").val(data.info)
-	// 		$("#installEdit").val(data.install);
-	// 		$("#maintananceEdit").val(data.maintanance);
-	// 		$('#editForm').attr('action', baseUrl + 'data/potency/coolUpdate/' + id);
-	// 		$('#editModal').modal('show');
-	// 	},
-	// })
+	const detail = extractDetails(id);
+	addTableRows(detail.qty);
+	if (detail.floor !== "") {
+		$("#detailFloor").text("Lantai " + detail.floor);
+	} else {
+		$("#detailFloor").text("");
+	}
+	$("#detailRoom").text("Ruang " + detail.room);
+	// console.log(detail.qty + " " + detail.floor + " " + detail.room);
+	$.ajax({
+		url: baseUrl + 'data/potency/cool/' + detail.table,
+		success: function(respond) {
+			let data = respond;
+			console.log(baseUrl + 'data/potency/cool/' + detail.table);
+		},
+	})
 });
 
 async function setLt2() {

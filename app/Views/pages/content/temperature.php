@@ -40,7 +40,7 @@
                            <small>Last updated <span id="dateGenset">0</span></small>
                         </div>
                         <div class="col d-grid justify-content-end">
-                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Genset"
+                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Genset-2"
                               data-bs-target="#detailModal">Detail</button>
                         </div>
                      </div>
@@ -69,7 +69,7 @@
                            <small>Last updated <span id="dateTrafo">0</span></small>
                         </div>
                         <div class="col d-grid justify-content-end">
-                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Trafo"
+                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Trafo-3"
                               data-bs-target="#detailModal">Detail</button>
                         </div>
                      </div>
@@ -102,7 +102,7 @@
                            <small>Last updated <span id="dateBatt2">0</span></small>
                         </div>
                         <div class="col d-grid justify-content-end">
-                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Battery.2"
+                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Battery.2-2"
                               data-bs-target="#detailModal">Detail</button>
                         </div>
                      </div>
@@ -131,7 +131,7 @@
                            <small>Last updated <span id="dateRecti2">0</span></small>
                         </div>
                         <div class="col d-grid justify-content-end">
-                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Recti.2"
+                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Recti.2-3"
                               data-bs-target="#detailModal">Detail</button>
                         </div>
                      </div>
@@ -160,7 +160,7 @@
                            <small>Last updated <span id="dateMsc">0</span></small>
                         </div>
                         <div class="col d-grid justify-content-end">
-                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="MSC.2"
+                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="MSC.2-6"
                               data-bs-target="#detailModal">Detail</button>
                         </div>
                      </div>
@@ -189,7 +189,7 @@
                            <small>Last updated <span id="dateCsps">0</span></small>
                         </div>
                         <div class="col d-grid justify-content-end">
-                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="CSPS.2"
+                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="CSPS.2-4"
                               data-bs-target="#detailModal">Detail</button>
                         </div>
                      </div>
@@ -222,7 +222,7 @@
                            <small>Last updated <span id="dateBatt3">0</span></small>
                         </div>
                         <div class="col d-grid justify-content-end">
-                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Battery.3"
+                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Battery.3-2"
                               data-bs-target="#detailModal">Detail</button>
                         </div>
                      </div>
@@ -251,7 +251,7 @@
                            <small>Last updated <span id="dateRecti3">0</span></small>
                         </div>
                         <div class="col d-grid justify-content-end">
-                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Recti.3"
+                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Recti.3-3"
                               data-bs-target="#detailModal">Detail</button>
                         </div>
                      </div>
@@ -280,7 +280,7 @@
                            <small>Last updated <span id="dateMkios">0</span></small>
                         </div>
                         <div class="col d-grid justify-content-end">
-                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="MKIOS.3"
+                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="MKIOS.3-3"
                               data-bs-target="#detailModal">Detail</button>
                         </div>
                      </div>
@@ -309,7 +309,7 @@
                            <small>Last updated <span id="dateCore">0</span></small>
                         </div>
                         <div class="col d-grid justify-content-end">
-                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Core.3"
+                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Core.3-4"
                               data-bs-target="#detailModal">Detail</button>
                         </div>
                      </div>
@@ -338,7 +338,7 @@
                            <small>Last updated <span id="dateInvas">0</span></small>
                         </div>
                         <div class="col d-grid justify-content-end">
-                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="INVAS.3"
+                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="INVAS.3-6"
                               data-bs-target="#detailModal">Detail</button>
                         </div>
                      </div>
@@ -367,7 +367,7 @@
                            <small>Last updated <span id="dateOcs">0</span></small>
                         </div>
                         <div class="col d-grid justify-content-end">
-                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="OCS.3"
+                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="OCS.3-3"
                               data-bs-target="#detailModal">Detail</button>
                         </div>
                      </div>
@@ -400,7 +400,7 @@
                            <small>Last updated <span id="dateBatt4">0</span></small>
                         </div>
                         <div class="col d-grid justify-content-end">
-                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Battery.4"
+                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Battery.4-2"
                               data-bs-target="#detailModal">Detail</button>
                         </div>
                      </div>
@@ -429,7 +429,7 @@
                            <small>Last updated <span id="dateRecti4">0</span></small>
                         </div>
                         <div class="col d-grid justify-content-end">
-                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Recti.4"
+                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Recti.4-3"
                               data-bs-target="#detailModal">Detail</button>
                         </div>
                      </div>
@@ -458,7 +458,7 @@
                            <small>Last updated <span id="dateBss">0</span></small>
                         </div>
                         <div class="col d-grid justify-content-end">
-                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="BSS.4"
+                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="BSS.4-4"
                               data-bs-target="#detailModal">Detail</button>
                         </div>
                      </div>
@@ -487,7 +487,7 @@
                            <small>Last updated <span id="dateInter">0</span></small>
                         </div>
                         <div class="col d-grid justify-content-end">
-                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Interkoneksi.4"
+                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Interkoneksi.4-4"
                               data-bs-target="#detailModal">Detail</button>
                         </div>
                      </div>
@@ -516,7 +516,7 @@
                            <small>Last updated <span id="dateTrans">0</span></small>
                         </div>
                         <div class="col d-grid justify-content-end">
-                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Transmisi.4"
+                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Transmisi.4-6"
                               data-bs-target="#detailModal">Detail</button>
                         </div>
                      </div>
@@ -549,7 +549,7 @@
                            <small>Last updated <span id="dateUtilityB">0</span></small>
                         </div>
                         <div class="col d-grid justify-content-end">
-                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Utility_B.5"
+                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Utility_B.5-2"
                               data-bs-target="#detailModal">Detail</button>
                         </div>
                      </div>
@@ -578,7 +578,7 @@
                            <small>Last updated <span id="dateUtilityA">0</span></small>
                         </div>
                         <div class="col d-grid justify-content-end">
-                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Utility_A.5"
+                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Utility_A.5-2"
                               data-bs-target="#detailModal">Detail</button>
                         </div>
                      </div>
@@ -607,7 +607,7 @@
                            <small>Last updated <span id="dateDC">0</span></small>
                         </div>
                         <div class="col d-grid justify-content-end">
-                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Data_Center.5"
+                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Data_Center.5-6"
                               data-bs-target="#detailModal">Detail</button>
                         </div>
                      </div>
@@ -636,7 +636,7 @@
                            <small>Last updated <span id="datePeng">0</span></small>
                         </div>
                         <div class="col d-grid justify-content-end">
-                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Pengembangan.5"
+                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Pengembangan.5-2"
                               data-bs-target="#detailModal">Detail</button>
                         </div>
                      </div>
@@ -665,7 +665,7 @@
                            <small>Last updated <span id="dateCont">0</span></small>
                         </div>
                         <div class="col d-grid justify-content-end">
-                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Containment.5"
+                           <button class="btn btn-outline-dark detailSensor" data-bs-toggle="modal" data-id="Containment.5-2"
                               data-bs-target="#detailModal">Detail</button>
                         </div>
                      </div>
@@ -682,10 +682,21 @@
    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
          <div class="modal-header">
-            <h5 class="modal-title" id="detailName">Detail Sensor</h5>
+            <h5 class="modal-title" id="detailName">Detail Sensor <span id="detailFloor"></span> <span id="detailRoom"></span></h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
          </div>
          <div id="detailBody" class="modal-body">
+            <table class="table table-bordered text-center">
+               <thead class="table-dark">
+                  <tr>
+                     <th>Sensor</th>
+                     <td>Suhu</td>
+                     <td>Kelembapan</td>
+                  </tr>
+               </thead>
+               <tbody id="sensorDetail">
+               </tbody>
+            </table>
          </div>
          <div class="modal-footer">
             <small class="text-dark">Last updated <span id="detailDate"></span></small>
