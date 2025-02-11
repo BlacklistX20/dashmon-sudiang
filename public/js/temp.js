@@ -5,7 +5,7 @@ $(document).ready(
 	},
 	startTime(),
 );
-import { addTableRows, extractDetails, setCard } from "./func.js";
+import { addTableRows, extractDetails, setCard, setDetailSensor } from "./func.js";
 
 document.addEventListener('DOMContentLoaded', function () {
 	const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
@@ -24,14 +24,8 @@ $(document).on('click', '.detailSensor', function() {
 		$("#detailFloor").text("");
 	}
 	$("#detailRoom").text("Ruang " + detail.room);
-	// console.log(detail.qty + " " + detail.floor + " " + detail.room);
-	$.ajax({
-		url: baseUrl + 'data/potency/cool/' + detail.table,
-		success: function(respond) {
-			let data = respond;
-			console.log(baseUrl + 'data/potency/cool/' + detail.table);
-		},
-	})
+	// console.log(detail.table);
+	setDetailSensor(detail.table);
 });
 
 async function setLt2() {

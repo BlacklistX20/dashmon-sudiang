@@ -207,9 +207,6 @@ function extractDetails(input) {
 		 qty = parseInt(parts[1]); // Extract qty (as number)
 	}
 
-	// Extract table name (before the dash) and convert to lowercase
-	table = parts[0].toLowerCase();
-
 	// Split by dot (.) to separate floor and room
 	let roomFloorParts = parts[0].split(".");
 	if (roomFloorParts.length > 1) {
@@ -222,8 +219,26 @@ function extractDetails(input) {
 	// Replace underscores with spaces in room name
 	room = room.replace(/_/g, " ");
 
+	// Generate table variable: lowercase, remove dots
+	table = parts[0].toLowerCase().replace(/\./g, "");
+
 	return { qty, floor, room, table };
 }
+
+async function setDetailSensor(table) {
+	let data = await $.ajax({
+		url: baseUrl + 'data/temp/perMinute/' + table,
+		dataType: "json",
+	})
+	// console.log(data);
+	$("#detailDate").text(data.updated_at);
+	let dataLength = (Object.keys(data).length - 4) / 2; 
+	for (let i = 1; i <= dataLength; i++) {
+		$(`#temp${i}`).text(data[`t${i}`]);
+		$(`#hum${i}`).text(data[`h${i}`]);
+	}
+}
+
 export {
 	splitArrayData,
 	getMinData,
@@ -238,4 +253,5 @@ export {
 	setCard,
 	addTableRows,
 	extractDetails,
+	setDetailSensor,
 };
