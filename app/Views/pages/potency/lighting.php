@@ -64,7 +64,7 @@
                <h5 class="modal-title" id="addLabel">Tambah Data Potensi</h5>
                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="<?= base_url() ?>data/potency/lightAdd" method="post" class="needs-validation" novalidate>
+            <form action="<?= base_url() ?>index.php/data/potency/lightAdd" method="post" class="needs-validation" novalidate>
                <div class="modal-body row g-3">
                   <div class="mb-3 col-md-4">
                      <label for="floorAdd" class="form-label">Lantai</label>

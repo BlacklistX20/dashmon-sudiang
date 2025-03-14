@@ -6,7 +6,7 @@
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
 <!-- row-cols-xxl-6 row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1 -->
   <div class="card-custom col">
-    <a href="<?= base_url() ?>potency/power">
+    <a href="<?= base_url() ?>index.php/potency/power">
       <div class="card bg-danger text-white text-center p-3 mb-3 d-flex align-items-center justify-content-center"
         style="height: 40vh;">
         <i class='bx bxs-zap mb-3' style="font-size: 128px;"></i>
@@ -28,7 +28,7 @@
     </a>
   </div>
   <div class="card-custom col">
-    <a href="<?= base_url() ?>potency/user">
+    <a href="<?= base_url() ?>index.php/potency/user">
       <div class="card bg-danger text-white text-center p-3 mb-3 d-flex align-items-center justify-content-center"
         style="height: 40vh;">
         <i class='bx bxs-server mb-3' style="font-size: 128px;"></i>
@@ -41,7 +41,7 @@
     </a>
   </div>
   <div class="card-custom col">
-    <a href="<?= base_url() ?>potency/cooling">
+    <a href="<?= base_url() ?>index.php/potency/cooling">
       <div class="card bg-danger text-white text-center p-3 mb-3 d-flex align-items-center justify-content-center"
         style="height: 40vh;">
         <i class='bx bx-wind mb-3' style="font-size: 128px;"></i>
@@ -53,7 +53,7 @@
     </a>
   </div>
   <div class="card-custom col">
-    <a href="<?= base_url() ?>potency/fire">
+    <a href="<?= base_url() ?>index.php/potency/fire">
       <div class="card bg-danger text-white text-center p-3 mb-3 d-flex align-items-center justify-content-center"
         style="height: 40vh;">
         <i class='bx bxs-hot mb-3' style="font-size: 128px;"></i>
@@ -65,7 +65,7 @@
     </a>
   </div>
   <div class="card-custom col">
-    <a href="<?= base_url() ?>potency/tank">
+    <a href="<?= base_url() ?>index.php/potency/tank">
       <div class="card bg-danger text-white text-center p-3 mb-3 d-flex align-items-center justify-content-center"
         style="height: 40vh;">
         <i class='bx bxs-bed mb-3' style="font-size: 128px;"></i>
@@ -76,16 +76,16 @@
     </a>
   </div>
   <div class="card-custom col">
-    <a href="<?= base_url() ?>potency/security">
+    <a href="<?= base_url() ?>index.php/potency/security">
       <div class="card bg-danger text-white text-center p-3 mb-3 d-flex align-items-center justify-content-center"
         style="height: 40vh;">
-        <img class="ico mb-3" src="<?= base_url() ?>img\cctv.png" alt="ICON">
+        <img class="ico mb-3" src="<?= base_url() ?>index.php/img\cctv.png" alt="ICON">
         <h1 class="mb-3">Keamanan Gedung (<span id="potSecurity">0</span>)</h1>
       </div>
     </a>
   </div>
   <div class="card-custom col">
-    <a href="<?= base_url() ?>potency/lighting">
+    <a href="<?= base_url() ?>index.php/potency/lighting">
       <div class="card bg-danger text-white text-center p-3 mb-3 d-flex align-items-center justify-content-center"
         style="height: 40vh;">
         <i class='bx bx-bulb mb-3' style="font-size: 128px;"></i>
@@ -94,7 +94,7 @@
     </a>
   </div>
   <!-- <div class="card-custom col">
-    <a href="<?= base_url() ?>potency/safety">
+    <a href="<?= base_url() ?>index.php/potency/safety">
       <div class="card bg-danger text-white text-center p-3 mb-3 d-flex align-items-center justify-content-center"
         style="height: 40vh;">
         <i class='bx bxs-hard-hat mb-3' style="font-size: 128px;"></i>
@@ -103,16 +103,16 @@
     </a>
   </div> -->
   <div class="card-custom col">
-    <a href="<?= base_url() ?>potency/pump">
+    <a href="<?= base_url() ?>index.php/potency/pump">
       <div class="card bg-danger text-white text-center p-3 mb-3 d-flex align-items-center justify-content-center"
         style="height: 40vh;">
-        <img class="ico mb-3" src="<?= base_url() ?>img\pump.png" alt="ICON">
+        <img class="ico mb-3" src="<?= base_url() ?>index.php/img\pump.png" alt="ICON">
         <h1 class="mb-3">Pompa Gedung (<span id="potPump">0</span>)</h1>
       </div>
     </a>
   </div>
   <!-- <div class="card-custom col">
-    <a href="<?= base_url() ?>potency/furniture">
+    <a href="<?= base_url() ?>index.php/potency/furniture">
       <div class="card bg-danger text-white text-center p-3 mb-3 d-flex align-items-center justify-content-center"
         style="height: 40vh;">
         <i class='bx bx-chair mb-3' style="font-size: 128px;"></i>
@@ -121,7 +121,7 @@
     </a>
   </div>
   <div class="card-custom col">
-    <a href="<?= base_url() ?>potency/finishing">
+    <a href="<?= base_url() ?>index.php/potency/finishing">
       <div class="card bg-danger text-white text-center p-3 mb-3 d-flex align-items-center justify-content-center"
         style="height: 40vh;">
         <i class='bx bx-buildings mb-3' style="font-size: 128px;"></i>
@@ -130,10 +130,10 @@
     </a>
   </div>
   <div class="card-custom col">
-    <a href="<?= base_url() ?>potency/transport">
+    <a href="<?= base_url() ?>index.php/potency/transport">
       <div class="card bg-danger text-white text-center p-3 mb-3 d-flex align-items-center justify-content-center"
         style="height: 40vh;">
-        <img class="ico mb-3" src="<?= base_url() ?>asset\src\img\pulley.png" alt="ICON">
+        <img class="ico mb-3" src="<?= base_url() ?>index.php/asset\src\img\pulley.png" alt="ICON">
         <h1 class="mb-3">Alat Pengangkut (<span id="potTransport">0</span>)</h1>
       </div>
     </a>

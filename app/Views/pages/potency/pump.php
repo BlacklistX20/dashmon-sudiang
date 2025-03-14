@@ -66,7 +66,7 @@
                <h5 class="modal-title" id="addLabel">Tambah Data Potensi</h5>
                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="<?= base_url() ?>data/potency/pumpAdd" method="post" class="needs-validation" novalidate>
+            <form action="<?= base_url() ?>index.php/data/potency/pumpAdd" method="post" class="needs-validation" novalidate>
                <div class="modal-body row g-3">
                   <div class="mb-3 col-md-4">
                      <label for="floorAdd" class="form-label">Lantai</label>
@@ -126,7 +126,7 @@
                   </div>
                   <div class="mb-3 col-md-4">
                      <label for="installAdd" class="form-label">Tahun Instalasi</label>
-                     <input type="number" class="form-control" id="installAdd" name="install" required />
+                     <input type="text" class="form-control" id="installAdd" name="install" required />
                      <div class="invalid-feedback">Masukkan Tahun Instalasi</div>
                   </div>
                </div>

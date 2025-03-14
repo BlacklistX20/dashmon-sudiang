@@ -109,4 +109,4 @@ setInterval(() => {
 	setLt3();
 	setLt4();
 	setLt5();
-}, 1000);
+}, 3000);

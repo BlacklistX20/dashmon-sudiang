@@ -61,7 +61,7 @@ async function getQty() {
 	$('#potTankMonthly').text(data.monthly);
 	$('#potSecurity').text(data.security);
 	$('#potLamp').text(data.light);
-	$('#potpotPump').text(data.pump);
+	$('#potPump').text(data.pump);
 }
 
 $(document).ready(function () {

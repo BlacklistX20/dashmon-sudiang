@@ -41,7 +41,9 @@
 
 	<!-- php BaseUrl -->
 	<script>
-		const baseUrl = '<?= base_url() ?>'
+		const baseUrl = '<?= base_url() ?>index.php/'
+		console.log(baseUrl);
+		
 	</script>
 </body>
 
