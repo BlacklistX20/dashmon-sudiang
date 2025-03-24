@@ -35,9 +35,9 @@ async function setMonthly() {
 		dataType: "json",
 	});
 
-	const tank3 = data.monthly.tank1;
-	const tank4 = data.monthly.tank2;
-	const tank5 = data.monthly.tank3;
+	const tank3 = data.monthly.tank1 > maxMonthly ? maxMonthly : data.monthly.tank1;
+	const tank4 = data.monthly.tank2 > maxMonthly ? maxMonthly : data.monthly.tank2;
+	const tank5 = data.monthly.tank3 > maxMonthly ? maxMonthly : data.monthly.tank3;
 
 	let percenTank3 = ((tank3 / maxMonthly) * 100).toFixed(1) + "%";
 	let percenTank4 = ((tank4 / maxMonthly) * 100).toFixed(1) + "%";
