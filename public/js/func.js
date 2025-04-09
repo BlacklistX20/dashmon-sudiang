@@ -166,7 +166,7 @@ function setCard(data, className) {
 			card.addClass("text-bg-success");
 		} else if (data.temp >= 27 && data.temp < 32) {
 			card.addClass("text-bg-warning");
-		} else if (data.temp >= 32 && data.temp == 0) {
+		} else if (data.temp >= 32 || data.temp == 0) {
 			card.addClass("text-bg-danger");
 		}
 	}
