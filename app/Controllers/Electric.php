@@ -358,7 +358,7 @@ class Electric extends BaseController
 
         $pue = new \App\Models\ElectricModel();
         $pue->changeTable();
-        $data = $pue->select('DATE_FORMAT(updated_at, "%d-%m-%Y %I:%i:%s %p") AS timestamp, pue, lvmdp, recti, ups')
+        $data = $pue->select('DATE_FORMAT(updated_at, "%d-%m-%Y") AS tanggal, DATE_FORMAT(updated_at, "%I:%i:%s %p") AS waktu, pue, lvmdp, recti, ups')
                     ->where("DATE(updated_at) >=", $start)->where("DATE(updated_at) <=", $end)->findAll();
 
        // Create Excel file
@@ -366,7 +366,7 @@ class Electric extends BaseController
        $sheet = $spreadsheet->getActiveSheet();
 
        // Set the header row
-       $headers = ['Timestamp', 'PUE', 'LVMDP', 'Recti', 'UPS'];
+       $headers = ['Tanggal', 'Waktu', 'PUE', 'LVMDP', 'Recti', 'UPS'];
        $sheet->fromArray($headers, null, 'A1');
 
        // Populate data rows

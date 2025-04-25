@@ -229,20 +229,45 @@ createChart('chartPanelUps', panelUps, 'bar', {
 		},
 	});
 
+let userInteracted = false;
+$('#head-wrap').css('background-color', 'yellow');
+
+$(document).one('click', function() {
+	userInteracted = true;
+	console.log(userInteracted);
+	if (userInteracted) {
+		$('#alarm-text').hide();
+		$('#head-wrap').css('background-color', '');
+		$('#vol-icon').removeClass('bx-volume-mute');
+		$('#vol-icon').addClass('bx-volume-full');
+	}
+});
+
 async function setValue() {
 	let data = await $.ajax({
 		url: baseUrl + "data/electric/value",
 		dataType: "json",
 	})
 
+	let shouldPlay = false;
+	const audio = $('#alarm')[0];
+
 	data.forEach(item => {
 		const card = $(`#${item.name}Card`);
 		if (item.status === 'D') {
 			card.addClass('bg-danger text-white');
+			shouldPlay = true;
 		} else {
 			card.removeClass('bg-danger text-white');
 		}
 	});
+
+	if (shouldPlay && userInteracted) {
+		audio.play().catch(err => console.warn("Playback error:", err));
+	} else {
+		audio.pause();
+		audio.currentTime = 0;
+	}
 
 	$('#pue').text(data[0].loads);
 	$('#pueDate').text(data[0].last_update);

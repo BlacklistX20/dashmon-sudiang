@@ -1,11 +1,12 @@
 <?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
-<div class="container-fluid mx-1 py-1">
-  <div class="row my-2">
+<audio id="alarm" src="<?= base_url('alarm.mp3');?>" preload="auto"></audio>
+<div id="main-wrap" class="container-fluid mx-1 py-1">
+  <div id="head-wrap" class="row my-2">
     <div class="col-6 text-start">
-      <h2 class="fw-bold">Electricity</h2>
-      <!-- <h2 class="fw-bold">Ruangan</h2> -->
+      <h2 class="fw-bold">Electricity <i id="vol-icon" class="bx bx-volume-mute"></i></h2>
+      <h3 id="alarm-text" class="fw-bold">Suara Alarm Belum Aktif, Klik dimana saja untuk mengaktifkan</h3>
     </div>
     <div class="col-6 text-end">
       <h2 id="time" class="fw-bold"></h2>
