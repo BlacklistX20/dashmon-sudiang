@@ -414,7 +414,7 @@
                     <td style="padding-bottom: 10px; font-size: large;">Frequency</td>
                     <td style="padding-bottom: 10px; font-size: large;">:</td>
                     <td style="padding-bottom: 10px; font-size: large;">
-                      <span id="p301Freq">0</span> Hz
+                      <span id="p310Freq">0</span> Hz
                     </td>
                   </tr>
                 </tbody>
@@ -847,6 +847,20 @@
                 <option value="" selected disabled>Pilih Jenis Tabel</option>
                 <option value="1" data-action="data/electric/download1">PUE, IT, dan Facility</option>
                 <option value="2" data-action="data/electric/download2">PUE, LVMDP, Recti, dan UPS</option>
+                <option value="3" data-action="data/electric/download3/recti">Rectifier</option>
+                <option value="4" data-action="data/electric/download3/ups">UPS</option>
+                <option value="5" data-action="data/electric/download3/p205">Panel 2.05</option>
+                <option value="6" data-action="data/electric/download3/p236">Panel 2.36</option>
+                <option value="7" data-action="data/electric/download3/p305">Panel 3.05</option>
+                <option value="8" data-action="data/electric/download3/p310">Panel 3.10</option>
+                <option value="9" data-action="data/electric/download3/p429">Panel 4.29</option>
+                <option value="10" data-action="data/electric/download3/ups202">UPS 2.02</option>
+                <option value="11" data-action="data/electric/download3/ups203">UPS 2.03</option>
+                <option value="12" data-action="data/electric/download3/ups301">UPS 3.01</option>
+                <option value="13" data-action="data/electric/download3/ups302">UPS 3.02</option>
+                <option value="14" data-action="data/electric/download3/ups501">UPS 5.01</option>
+                <option value="15" data-action="data/electric/download3/ups502">UPS 5.02</option>
+                <option value="16" data-action="data/electric/download4">PUE dan Semua Load</option>
               </select>
               <div class="invalid-feedback">
                   Pilih Jenis Tabel

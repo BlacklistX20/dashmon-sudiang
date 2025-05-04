@@ -339,7 +339,8 @@ class Electric extends BaseController
        }
 
        // Create Excel writer and download file
-       $filename = 'PUE_Data_' . $start . '_' . $end . '.xlsx';
+       $timestamp = time();
+       $filename = 'PUE_Data_' . $start . '_' . $end . '_' . $timestamp . '.xlsx';
        $writer = new Xlsx($spreadsheet);
 
        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
@@ -377,7 +378,86 @@ class Electric extends BaseController
        }
 
        // Create Excel writer and download file
-       $filename = 'PUE_Data_' . $start . '_' . $end . '.xlsx';
+       $timestamp = time();
+       $filename = 'PUE_Data_' . $start . '_' . $end . '_' . $timestamp . '.xlsx';
+       $writer = new Xlsx($spreadsheet);
+
+       header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+       header('Content-Disposition: attachment; filename="' . $filename . '"');
+       header('Cache-Control: max-age=0');
+
+       $writer->save('php://output');
+       exit();
+    }
+
+    public function downloadOpsi3($table)
+    {
+        // Get dates from the form submission
+        $start = $this->request->getGet('startDate');
+        $end = $this->request->getGet('endDate');
+
+        $data = new \App\Models\ElectricModel();
+        $data->changeTable($table);
+        $data = $data->select('DATE_FORMAT(updated_at, "%d-%m-%Y") AS tanggal, DATE_FORMAT(updated_at, "%I:%i:%s %p") AS waktu, loads, voltage, current, frequency')
+                    ->where("DATE(updated_at) >=", $start)->where("DATE(updated_at) <=", $end)->findAll();
+
+       // Create Excel file
+       $spreadsheet = new Spreadsheet();
+       $sheet = $spreadsheet->getActiveSheet();
+
+       // Set the header row
+       $headers = ['Tanggal', 'Waktu', 'Load', 'Voltage', 'Current', 'Frequency'];
+       $sheet->fromArray($headers, null, 'A1');
+
+       // Populate data rows
+       $rowIndex = 2;
+       foreach ($data as $row) {
+           $sheet->fromArray(array_values($row), null, 'A' . $rowIndex);
+           $rowIndex++;
+       }
+
+       // Create Excel writer and download file
+       $timestamp = time();
+       $filename = $table . '_Data_' . $start . '_' . $end . '_' . $timestamp . '.xlsx';
+       $writer = new Xlsx($spreadsheet);
+
+       header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+       header('Content-Disposition: attachment; filename="' . $filename . '"');
+       header('Cache-Control: max-age=0');
+
+       $writer->save('php://output');
+       exit();
+    }
+
+    public function downloadOpsi4()
+    {
+        // Get dates from the form submission
+        $start = $this->request->getGet('startDate');
+        $end = $this->request->getGet('endDate');
+
+        $pue = new \App\Models\ElectricModel();
+        $pue->changeTable();
+        $data = $pue->select('DATE_FORMAT(updated_at, "%d-%m-%Y") AS tanggal, DATE_FORMAT(updated_at, "%I:%i:%s %p") AS waktu, pue, pue2, lvmdp, it, it2, recti, recti2, ups, ups2, p205, p236, p305, p310, p429, ups202, ups203, ups301, ups302, ups501, ups502')
+                    ->where("DATE(updated_at) >=", $start)->where("DATE(updated_at) <=", $end)->findAll();
+
+       // Create Excel file
+       $spreadsheet = new Spreadsheet();
+       $sheet = $spreadsheet->getActiveSheet();
+
+       // Set the header row
+       $headers = ['Tanggal', 'Waktu', 'PUE', 'PUE2', 'LVMDP', 'IT', 'IT2', 'Recti', 'Recti2', 'UPS', 'UPS2', 'p205', 'p236', 'p305', 'p310', 'p429', 'ups202', 'ups203', 'ups301', 'ups302', 'ups501', 'ups502'];
+       $sheet->fromArray($headers, null, 'A1');
+
+       // Populate data rows
+       $rowIndex = 2;
+       foreach ($data as $row) {
+           $sheet->fromArray(array_values($row), null, 'A' . $rowIndex);
+           $rowIndex++;
+       }
+
+       // Create Excel writer and download file
+       $timestamp = time();
+       $filename = 'PUE_Detail_' . $start . '_' . $end . '_' . $timestamp . '.xlsx';
        $writer = new Xlsx($spreadsheet);
 
        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');

@@ -35,6 +35,8 @@ $routes->get('/data/electric/chartWeek', [Electric::class, 'chartWeek']);
 $routes->get('/data/electric/chartUpdate', [Electric::class, 'chartUpdate']);
 $routes->get('/data/electric/download1', [Electric::class, 'downloadOpsi1']);
 $routes->get('/data/electric/download2', [Electric::class, 'downloadOpsi2']);
+$routes->get('/data/electric/download3/(:segment)', [Electric::class, 'downloadOpsi3']);
+$routes->get('/data/electric/download4', [Electric::class, 'downloadOpsi4']);
 
 // route for request data Temp Page
 $routes->get('/data/temp/perSecond', [Temp::class, 'dataTempSc']);
