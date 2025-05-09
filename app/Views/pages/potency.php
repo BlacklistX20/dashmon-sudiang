@@ -79,7 +79,7 @@
     <a href="<?= base_url() ?>index.php/potency/security">
       <div class="card bg-danger text-white text-center p-3 mb-3 d-flex align-items-center justify-content-center"
         style="height: 40vh;">
-        <img class="ico mb-3" src="<?= base_url() ?>index.php/img\cctv.png" alt="ICON">
+        <img class="ico mb-3" src="<?= base_url() ?>index.php/img/cctv.png" alt="ICON">
         <h1 class="mb-3">Keamanan Gedung (<span id="potSecurity">0</span>)</h1>
       </div>
     </a>
@@ -106,7 +106,7 @@
     <a href="<?= base_url() ?>index.php/potency/pump">
       <div class="card bg-danger text-white text-center p-3 mb-3 d-flex align-items-center justify-content-center"
         style="height: 40vh;">
-        <img class="ico mb-3" src="<?= base_url() ?>index.php/img\pump.png" alt="ICON">
+        <img class="ico mb-3" src="<?= base_url() ?>index.php/img/pump.png" alt="ICON">
         <h1 class="mb-3">Pompa Gedung (<span id="potPump">0</span>)</h1>
       </div>
     </a>
@@ -133,7 +133,7 @@
     <a href="<?= base_url() ?>index.php/potency/transport">
       <div class="card bg-danger text-white text-center p-3 mb-3 d-flex align-items-center justify-content-center"
         style="height: 40vh;">
-        <img class="ico mb-3" src="<?= base_url() ?>index.php/asset\src\img\pulley.png" alt="ICON">
+        <img class="ico mb-3" src="<?= base_url() ?>index.php/asset/src/img/pulley.png" alt="ICON">
         <h1 class="mb-3">Alat Pengangkut (<span id="potTransport">0</span>)</h1>
       </div>
     </a>

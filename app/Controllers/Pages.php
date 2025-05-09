@@ -25,22 +25,22 @@ class Pages extends BaseController
 
     public function index()
     {
-        return view('pages\home');
+        return view('pages/home');
     }
 
     public function temp()
     {
-        return view('pages\temp');
+        return view('pages/temp');
     }
 
     public function electric()
     {
-        return view('pages\electric');
+        return view('pages/electric');
     }
 
     public function fuel()
     {
-        return view('pages\fuel');
+        return view('pages/fuel');
     }
 
     public function potency(string $subPage)
@@ -56,60 +56,60 @@ class Pages extends BaseController
 
         switch ($subPage) {
             case 'home':
-                return view('pages\potency');
+                return view('pages/potency');
                 break;
             case 'power':
                 $data['power'] = $this->powerModel->getData();
-                return view('pages\potency\power', $data);
+                return view('pages/potency/power', $data);
                 break;
             case 'user':
                 $data['rack'] = $this->rackModel->getData();
-                return view('pages\potency\user', $data);
+                return view('pages/potency/user', $data);
                 break;
             case 'cooling':
                 $data['cool'] = $this->coolModel->getData();
-                return view('pages\potency\cooling', $data);
+                return view('pages/potency/cooling', $data);
                 break;
             case 'fire':
                 $data['fire'] = $this->fireModel->getData();
-                return view('pages\potency\fire', $data);
+                return view('pages/potency/fire', $data);
                 break;
             case 'tank':
                 $data['tank'] = $this->tankModel->getData();
-                return view('pages\potency\tank', $data);
+                return view('pages/potency/tank', $data);
                 break;
             case 'security':
                 $data['security'] = $this->securityModel->getData();
-                return view('pages\potency\security', $data);
+                return view('pages/potency/security', $data);
                 break;
             case 'lighting':
                 $data['light'] = $this->lightModel->getData();
-                return view('pages\potency\lighting', $data);
+                return view('pages/potency/lighting', $data);
                 break;
             // case 'safety':
-            //     return view('pages\potency\safety');
+            //     return view('pages/potency/safety');
             //     break;
             case 'pump':
                 $data['pump'] = $this->pumpModel->getData();
-                return view('pages\potency\pump', $data);
+                return view('pages/potency/pump', $data);
                 break;
             // case 'furniture':
-            //     return view('pages\potency\furniture');
+            //     return view('pages/potency/furniture');
             //     break;
             // case 'finishing':
-            //     return view('pages\potency\finishing');
+            //     return view('pages/potency/finishing');
             //     break;
             // case 'transport':
-            //     return view('pages\potency\transport');
+            //     return view('pages/potency/transport');
             //     break;
             default:
-                return view('pages\potency');
+                return view('pages/potency');
                 break;
         }
     }
 
     public function space()
     {
-        return view('pages\space');
+        return view('pages/space');
     }
 }
