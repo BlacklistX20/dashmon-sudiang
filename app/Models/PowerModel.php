@@ -13,7 +13,7 @@ class PowerModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
 
-    protected $allowedFields    = ['sn', 'barcode', 'floor', 'room', 'category', 'name', 'vendor', 'brand', 'type', 'capacity', 'modul', 'modul_capacity', 'occupancy', 'aging', 'battery', 'source_a', 'source_b', 'condition', 'status', 'info', 'install', 'maintanance', 'updated_at'];
+    protected $allowedFields    = ['sn', 'barcode', 'floor', 'room', 'category', 'name', 'vendor', 'brand', 'type', 'capacity', 'modul', 'modul_capacity', 'occupancy', 'aging', 'battery', 'battery_qty', 'source_a', 'source_b', 'condition', 'status', 'info', 'install', 'maintanance', 'updated_at'];
 
     /**
      * Get data from the database
@@ -79,7 +79,7 @@ class PowerModel extends Model
                 ->groupEnd();
         }
 
-        $builder->select('sn, barcode, floor, room, category, name, vendor, brand, type, capacity, modul, modul_capacity, occupancy, aging, battery, source_a, source_b, condition, status, info, install, maintanance, updated_at')
+        $builder->select('sn, barcode, floor, room, category, name, vendor, brand, type, capacity, modul, modul_capacity, occupancy, aging, battery, battery_qty, source_a, source_b, condition, status, info, install, maintanance, updated_at')
             ->limit($length, $start);
 
         return $builder->get()->getResultArray();

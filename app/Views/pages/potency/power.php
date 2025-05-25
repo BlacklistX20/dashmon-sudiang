@@ -33,6 +33,7 @@
                <th>Occupancy</th>
                <th>Remark Aging</th>
                <th>Merk Batterai</th>
+               <th>Jumlah Batterai</th>
                <th>Source A</th>
                <th>Source B</th>
                <th>Kondisi</th>
@@ -62,6 +63,7 @@
                   <td><?= $p['occupancy']; ?>%</td>
                   <td><?= $p['aging']; ?></td>
                   <td><?= $p['battery']; ?></td>
+                  <td><?= $p['battery_qty']; ?></td>
                   <td><?= $p['source_a']; ?></td>
                   <td><?= $p['source_b']; ?></td>
                   <td><?= $p['condition']; ?></td>
@@ -193,8 +195,13 @@
                      <div class="invalid-feedback">Pilih Remark Aging</div>
                   </div>
                   <div class="mb-3 col-md-4">
+                     <label for="batteryAdd" class="form-label">Merk Batterai</label>
+                     <input type="text" class="form-control" id="batteryAdd" name="battery" required />
+                     <div class="invalid-feedback">Masukkan Merk Batterai</div>
+                  </div>
+                  <div class="mb-3 col-md-4">
                      <label for="batteryAdd" class="form-label">Jumlah Batterai</label>
-                     <input type="number" class="form-control" id="batteryAdd" name="battery" required />
+                     <input type="number" class="form-control" id="batteryAdd" name="battery_qty" required />
                      <div class="invalid-feedback">Masukkan Jumlah Batterai</div>
                   </div>
                   <div class="mb-3 col-md-4">
@@ -357,8 +364,13 @@
                      <div class="invalid-feedback">Pilih Remark Aging</div>
                   </div>
                   <div class="mb-3 col-md-4">
+                     <label for="batteryEdit" class="form-label">Merk Batterai</label>
+                     <input type="text" class="form-control" id="batteryBrandEdit" name="battery" required />
+                     <div class="invalid-feedback">Masukkan Merk Batterai</div>
+                  </div>
+                  <div class="mb-3 col-md-4">
                      <label for="batteryEdit" class="form-label">Jumlah Batterai</label>
-                     <input type="number" class="form-control" id="batteryEdit" name="battery" required />
+                     <input type="number" class="form-control" id="batteryQtyEdit" name="battery_qty" required />
                      <div class="invalid-feedback">Masukkan Jumlah Batterai</div>
                   </div>
                   <div class="mb-3 col-md-4">
@@ -460,7 +472,8 @@
             $("#occupancyEdit").val(data.occupancy);
             $("#systemEdit").val(data.system).change();
             $("#agingEdit").val(data.aging).change();
-            $("#batteryEdit").val(data.battery);
+            $("#batteryBrandEdit").val(data.battery);
+            $("#batteryQtyEdit").val(data.battery_qty);
             $("#sourceAEdit").val(data.source_a);
             $("#sourceBEdit").val(data.source_b);
             $("#conditionEdit").val(data.condition).change();
