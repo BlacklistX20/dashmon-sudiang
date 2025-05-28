@@ -195,13 +195,13 @@
                      <div class="invalid-feedback">Pilih Remark Aging</div>
                   </div>
                   <div class="mb-3 col-md-4">
-                     <label for="batteryAdd" class="form-label">Merk Batterai</label>
-                     <input type="text" class="form-control" id="batteryAdd" name="battery" required />
+                     <label for="batteryBrandAdd" class="form-label">Merk Batterai</label>
+                     <input type="text" class="form-control" id="batteryBrandAdd" name="battery" required />
                      <div class="invalid-feedback">Masukkan Merk Batterai</div>
                   </div>
                   <div class="mb-3 col-md-4">
-                     <label for="batteryAdd" class="form-label">Jumlah Batterai</label>
-                     <input type="number" class="form-control" id="batteryAdd" name="battery_qty" required />
+                     <label for="batteryQtyAdd" class="form-label">Jumlah Batterai</label>
+                     <input type="number" class="form-control" id="batteryQtyAdd" name="battery_qty" required />
                      <div class="invalid-feedback">Masukkan Jumlah Batterai</div>
                   </div>
                   <div class="mb-3 col-md-4">
@@ -364,12 +364,12 @@
                      <div class="invalid-feedback">Pilih Remark Aging</div>
                   </div>
                   <div class="mb-3 col-md-4">
-                     <label for="batteryEdit" class="form-label">Merk Batterai</label>
+                     <label for="batteryBrandEdit" class="form-label">Merk Batterai</label>
                      <input type="text" class="form-control" id="batteryBrandEdit" name="battery" required />
                      <div class="invalid-feedback">Masukkan Merk Batterai</div>
                   </div>
                   <div class="mb-3 col-md-4">
-                     <label for="batteryEdit" class="form-label">Jumlah Batterai</label>
+                     <label for="batteryQtyEdit" class="form-label">Jumlah Batterai</label>
                      <input type="number" class="form-control" id="batteryQtyEdit" name="battery_qty" required />
                      <div class="invalid-feedback">Masukkan Jumlah Batterai</div>
                   </div>
