@@ -10,15 +10,15 @@
 	<link rel="stylesheet" href="<?= base_url('css/style.css'); ?>" />
 
 	<!-- Bootstrap 5 -->
-	<link rel="stylesheet" href="<?= base_url('bootstrap-5.3.3-dist/css/bootstrap.min.css'); ?>">
-	<script src="<?= base_url('bootstrap-5.3.3-dist/js/bootstrap.min.js'); ?>"></script>
-	<script src="<?= base_url('bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js'); ?>"></script>
+	<link rel="stylesheet" href="<?= base_url('node_modules/bootstrap/dist/css/bootstrap.min.css'); ?>">
+	<script src="<?= base_url('node_modules/bootstrap/dist/js/bootstrap.min.js'); ?>"></script>
+	<script src="<?= base_url('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'); ?>"></script>
 
 	<!-- jQuery -->
-	<script src="<?= base_url('jquery/jquery-3.7.1.min.js'); ?>"></script>
+	<script src="<?= base_url('node_modules/jquery/dist/jquery.min.js'); ?>"></script>
 
 	<!-- Box Icon -->
-	<link href='<?= base_url('boxicons-2.1.4/css/boxicons.min.css'); ?>' rel='stylesheet'>
+	<link href='<?= base_url('node_modules/boxicons/css/boxicons.min.css'); ?>' rel='stylesheet'>
 
 	<!-- Data Tables -->
 	<link rel="stylesheet" href="<?= base_url('datatables/datatables.min.css'); ?>">
