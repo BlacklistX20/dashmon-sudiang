@@ -42,7 +42,7 @@
 	<!-- php BaseUrl -->
 	<script>
 		const baseUrl = '<?= base_url() ?>index.php/'
-		console.log(baseUrl);
+		// console.log(baseUrl);
 		
 	</script>
 </body>

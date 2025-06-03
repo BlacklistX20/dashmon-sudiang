@@ -294,7 +294,7 @@ async function setChart() {
 		};
 		charts['fuelMonthly'].update();
 
-		console.log(data.noon);
+		// console.log(data.noon);
 	} catch (error) {
 		// Handle AJAX failure and show Bootstrap alert
 		const alertContainer = document.getElementById("alert-container");
