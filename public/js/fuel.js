@@ -4,6 +4,7 @@ $(document).ready(function () {
 }, startTime());
 
 const maxDaily = 1500;
+const maxMonthly1 = 11162;
 const maxMonthly = 10000;
 
 // $(document).ready(getDataFuel(), setInterval(getDataFuel, 1000));
@@ -35,11 +36,11 @@ async function setMonthly() {
 		dataType: "json",
 	});
 
-	const tank3 = data.monthly.tank1 > maxMonthly ? maxMonthly : data.monthly.tank1;
+	const tank3 = data.monthly.tank1 > maxMonthly1 ? maxMonthly1 : data.monthly.tank1;
 	const tank4 = data.monthly.tank2 > maxMonthly ? maxMonthly : data.monthly.tank2;
 	const tank5 = data.monthly.tank3 > maxMonthly ? maxMonthly : data.monthly.tank3;
 
-	let percenTank3 = ((tank3 / maxMonthly) * 100).toFixed(1) + "%";
+	let percenTank3 = ((tank3 / maxMonthly1) * 100).toFixed(1) + "%";
 	let percenTank4 = ((tank4 / maxMonthly) * 100).toFixed(1) + "%";
 	let percenTank5 = ((tank5 / maxMonthly) * 100).toFixed(1) + "%";
 
