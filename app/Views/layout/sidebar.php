@@ -9,9 +9,10 @@
         <a href="<?= base_url() ?>index.php/electric" id="electric" class="nav_link"> <i class='bx bx-bolt-circle nav_icon'></i> <span class="nav_name">Electricity</span> </a>
         <a href="<?= base_url() ?>index.php/fuel" id="fuel" class="nav_link"> <i class='bx bxs-gas-pump nav_icon'></i> <span class="nav_name">Level BBM</span> </a>
         <a href="<?= base_url() ?>index.php/potency/home" id="potency" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Data Potensi</span> </a>
-        <!-- <a href="<?= base_url() ?>index.php/space" id="space" class="nav_link"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Space Management</span> </a> -->
+        <a href="<?= base_url() ?>index.php/sprinkler" id="sprinkler" class="nav_link"> <i class='bx bx-water-drop nav_icon'></i> <span class="nav_name">Sprinkler Rooftop</span> </a>
       </div>
     </div>
+
     <!-- <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a> -->
   </nav>
 </div>

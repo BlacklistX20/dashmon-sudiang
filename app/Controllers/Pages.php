@@ -108,6 +108,11 @@ class Pages extends BaseController
         }
     }
 
+    public function sprinkler()
+    {
+        return view('pages/sprinkler');
+    }
+
     public function space()
     {
         return view('pages/space');
