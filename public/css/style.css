@@ -351,3 +351,46 @@ input:focus-visible + label {
     pointer-events: all; /* Make the alert itself clickable */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add some elevation */
 }
+
+/* Custom Styling for sprinkle page */
+.status-card {
+    transition: all 0.3s ease;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Custom Toggle Switch Styling */
+.valve-switch-container {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    text-align: center;
+    height: 100%;
+}
+
+.form-check-input {
+    width: 3.5rem !important; /* Make it long oval */
+    height: 1.75rem !important;
+    cursor: pointer;
+}
+
+.valve-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #495057;
+}
+
+/* Loading Overlay */
+#loadingOverlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255,255,255,0.7);
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
