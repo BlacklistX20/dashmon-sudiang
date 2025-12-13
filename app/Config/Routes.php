@@ -21,6 +21,7 @@ $routes->get('/electric', [Pages::class, 'electric']);
 $routes->get('/fuel', [Pages::class, 'fuel']);
 $routes->get('/space', [Pages::class, 'space']);
 $routes->get('/potency/(:segment)', [Pages::class, 'potency']);
+$routes->get('/sprinkler', [Pages::class, 'sprinkler']);
 
 // route for request data Home Page
 $routes->get('/data/home/pue', [Home::class, 'dataPue']);

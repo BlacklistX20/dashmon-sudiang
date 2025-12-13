@@ -351,3 +351,91 @@ input:focus-visible + label {
     pointer-events: all; /* Make the alert itself clickable */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add some elevation */
 }
+
+/* Custom Styling for sprinkle page */
+/* Custom Card Styling */
+.control-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Pump Status Styles */
+#pump-status-container {
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease;
+}
+.pump-off {
+    background-color: #dc3545; /* Bootstrap Red */
+}
+.pump-on {
+    background-color: #198754; /* Bootstrap Green */
+}
+
+/* Custom Toggle Switch Styling */
+/* Long oval with circle inside */
+.switch-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #dc3545; /* Default Red (Off) */
+    transition: .4s;
+    border-radius: 40px; /* Rounded oval */
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 32px;
+    width: 32px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%; /* Circle */
+}
+
+/* Checked State (On) */
+input:checked + .slider {
+    background-color: #198754; /* Green */
+}
+
+input:checked + .slider:before {
+    transform: translateX(40px);
+}
+
+/* Disabled state during API calls */
+input:disabled + .slider {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
