@@ -1,16 +1,16 @@
 <?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
-<div id="main-wrap" class="container-fluid mx-1 py-1">
+<div id="main-wrap" class="container-fluid mx-3 py-3">
   
-<h2 class="text-center mb-4">Water Control System</h2>
+<h1 class="text-center mb-4">Water Control System</h1>
     
     <!-- ROW 1: Connection Status -->
     <div class="row mb-3">
         <div class="col-12">
             <div class="control-card d-flex justify-content-between align-items-center">
-                <h5 class="m-0">Arduino Connection</h5>
-                <span id="connection-status" class="badge bg-secondary">Connecting...</span>
+                <h2 class="m-0">Arduino Connection</h2>
+                <span id="connection-status" class="badge fs-1 bg-secondary">Connecting...</span>
             </div>
         </div>
     </div>
