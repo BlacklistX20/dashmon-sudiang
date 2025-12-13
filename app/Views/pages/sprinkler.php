@@ -10,7 +10,7 @@
         <div class="col-12">
             <div class="control-card d-flex justify-content-between align-items-center">
                 <h2 class="m-0">Arduino Connection</h2>
-                <span id="connection-status" class="badge fs-1 bg-secondary">Connecting...</span>
+                <h2><span id="connection-status" class="badge bg-secondary">Connecting...</span></h2>
             </div>
         </div>
     </div>
