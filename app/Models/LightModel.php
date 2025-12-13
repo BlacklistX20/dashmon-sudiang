@@ -13,7 +13,7 @@ class LightModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
 
-    protected $allowedFields    = ['floor', 'room', 'brand', 'type', 'quantity', 'condition', 'info', 'updated_at'];
+    protected $allowedFields    = ['floor', 'room', 'brand', 'type', 'watt', 'quantity', 'condition', 'info', 'updated_at'];
 
     /**
      * Get data from the database
@@ -79,7 +79,7 @@ class LightModel extends Model
                 ->groupEnd();
         }
     
-        $builder->select('id, floor, room, brand, type, quantity, condition, info') // Exclude updated_at
+        $builder->select('id, floor, room, brand, type, watt, quantity, condition, info') // Exclude updated_at
             ->limit($length, $start);
     
         return $builder->get()->getResultArray();

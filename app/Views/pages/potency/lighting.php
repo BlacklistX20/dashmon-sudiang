@@ -184,6 +184,11 @@
                      <div class="invalid-feedback">Masukkan Type (Jika tidak ada isi dengan -)</div>
                   </div>
                   <div class="mb-3 col-md-4">
+                     <label for="wattEdit" class="form-label">Daya (Watt)</label>
+                     <input type="number" class="form-control" id="wattEdit" name="watt" required />
+                     <div class="invalid-feedback">Masukkan Daya (Watt)</div>
+                  </div>
+                  <div class="mb-3 col-md-4">
                      <label for="quantityEdit" class="form-label">Jumlah</label>
                      <input type="number" class="form-control" id="quantityEdit" name="quantity" required />
                      <div class="invalid-feedback">Masukkan Jumlah</div>
@@ -240,11 +245,13 @@
          url: baseUrl + 'data/potency/light/' + id,
          success: function(respond) {
             let data = respond;
+	    //console.log(data);
             $('#itemNameEdit').text(data.brand + ' ' + data.type);
             $('#floorEdit').val(data.floor).change();
             $('#roomEdit').val(data.room).change();
             $('#brandEdit').val(data.brand);
             $('#typeEdit').val(data.type);
+            $('#wattEdit').val(data.watt);
             $('#quantityEdit').val(data.quantity);
             $('#conditionEdit').val(data.condition).change();
             $('#infoEdit').val(data.info);
