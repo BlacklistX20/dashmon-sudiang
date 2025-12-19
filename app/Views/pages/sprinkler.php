@@ -127,30 +127,6 @@
     }
 
     /**
-     * Updates the UI based on JSON data
-     */
-    function updateUI(data) {
-        // Update Pump Status
-        if (data.p === 1) {
-            pumpContainer.textContent = "Pompa On";
-            pumpContainer.className = "pump-on";
-        } else {
-            pumpContainer.textContent = "Pompa Off";
-            pumpContainer.className = "pump-off";
-        }
-
-        // Update Valve Switches
-        // We update internal state and DOM checked property
-        const remoteStates = [data.v1, data.v2, data.v3];
-        
-        valveInputs.forEach((input, index) => {
-            const isOn = remoteStates[index] === 1;
-            input.checked = isOn;
-            valveStates[index] = remoteStates[index];
-        });
-    }
-
-    /**
      * Handle UI visual for connection
      */
     function setConnectionStatus(isConnected) {
@@ -163,53 +139,86 @@
         }
     }
 
+    // --- Helper Baru: Mengatur Disable/Enable Tombol ---
+    function updateInputAvailability() {
+        // Cari apakah ada valve yang sedang ON (status 1)
+        const activeIndex = valveStates.findIndex(state => state === 1);
+
+        valveInputs.forEach((input, index) => {
+            if (activeIndex === -1) {
+                // Jika TIDAK ADA yang nyala, SEMUA tombol bisa diklik (enable)
+                input.disabled = false;
+            } else {
+                // Jika ADA yang nyala:
+                if (index === activeIndex) {
+                    // Tombol yang sedang nyala tetap enable (supaya bisa dimatikan)
+                    input.disabled = false;
+                } else {
+                    // Tombol sisanya di-disable (dikunci)
+                    input.disabled = true;
+                }
+            }
+        });
+    }
+
     /**
-     * Handle Valve Click
-     * Implements mutual exclusivity logic
+     * Update UI dari data Server
+     */
+    function updateUI(data) {
+        // Update Status Pompa
+        if (data.p === 1) {
+            pumpContainer.textContent = "Pompa On";
+            pumpContainer.className = "pump-on";
+        } else {
+            pumpContainer.textContent = "Pompa Off";
+            pumpContainer.className = "pump-off";
+        }
+
+        // Update Toggle Switch
+        const remoteStates = [data.v1, data.v2, data.v3];
+
+        valveInputs.forEach((input, index) => {
+            const isOn = remoteStates[index] === 1;
+            input.checked = isOn;
+            valveStates[index] = remoteStates[index];
+        });
+
+        // PENTING: Panggil fungsi locking setelah data terupdate
+        updateInputAvailability();
+    }
+
+    /**
+     * Handle Valve Click (Revisi: Locking Mode)
      */
     async function handleValveChange(targetValveIndex, checkboxElement) {
+        // 1. Kunci UI sementara request berjalan (supaya user tidak spam klik)
         isRequestInProgress = true;
-        
-        // Disable all inputs temporarily
-        valveInputs.forEach(input => input.disabled = true);
+        valveInputs.forEach(input => input.disabled = true); 
 
         const isTurningOn = checkboxElement.checked;
 
         try {
-            if (isTurningOn) {
-                // Logic: Only one active.
-                // Check if any other valve is currently ON
-                const activeValveIndex = valveStates.findIndex(state => state === 1);
-
-                if (activeValveIndex !== -1 && activeValveIndex !== targetValveIndex) {
-                    // Turn off the currently active valve first
-                    console.log(`Turning off active valve ${activeValveIndex + 1} first...`);
-                    await sendCommand(activeValveIndex, 0);
-                    valveInputs[activeValveIndex].checked = false; // Optimistic UI update
-                    valveStates[activeValveIndex] = 0;
-                }
-
-                // Turn on the target valve
-                console.log(`Turning on valve ${targetValveIndex + 1}...`);
-                await sendCommand(targetValveIndex, 1);
-                valveStates[targetValveIndex] = 1;
-
-            } else {
-                // Simple Turn Off
-                console.log(`Turning off valve ${targetValveIndex + 1}...`);
-                await sendCommand(targetValveIndex, 0);
-                valveStates[targetValveIndex] = 0;
-            }
+            // Logika Sederhana: Hanya kirim perintah untuk tombol yang diklik
+            // Tidak perlu mematikan valve lain, karena valve lain pasti sudah disable/mati
+            
+            const newState = isTurningOn ? 1 : 0;
+            console.log(Sending command: Valve ${targetValveIndex + 1} -> ${newState});
+            
+            await sendCommand(targetValveIndex, newState);
+            
+            // Update state internal jika sukses
+            valveStates[targetValveIndex] = newState;
 
         } catch (error) {
             console.error("Command failed", error);
-            // Revert the checkbox to its previous state on error
+            // Jika gagal, kembalikan tampilan checkbox ke posisi semula
             checkboxElement.checked = !isTurningOn;
-            alert("Failed to communicate with Arduino. Check connection.");
+            alert("Gagal komunikasi dengan Arduino.");
         } finally {
-            // Re-enable inputs
-            valveInputs.forEach(input => input.disabled = false);
             isRequestInProgress = false;
+            
+            // 2. Buka kunci UI sesuai logika "Satu Nyala = Yang Lain Mati"
+            updateInputAvailability(); 
         }
     }
 
@@ -226,8 +235,8 @@
         await fetch(url, { method: 'GET' });
     }
 
-    // Start Polling Loop (Every 2 seconds)
-    setInterval(checkStatus, 2000);
+    // Start Polling Loop (Every 60 seconds)
+    setInterval(checkStatus, 60000);
     
     // Initial check
     checkStatus();
