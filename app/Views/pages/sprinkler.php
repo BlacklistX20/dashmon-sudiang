@@ -202,7 +202,7 @@
             // Tidak perlu mematikan valve lain, karena valve lain pasti sudah disable/mati
             
             const newState = isTurningOn ? 1 : 0;
-            console.log(Sending command: Valve ${targetValveIndex + 1} -> ${newState});
+            console.log(`Sending command: Valve ${targetValveIndex + 1} -> ${newState}`);
             
             await sendCommand(targetValveIndex, newState);
             
