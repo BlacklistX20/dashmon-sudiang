@@ -353,54 +353,68 @@ input:focus-visible + label {
 }
 
 /* Custom Styling for sprinkle page */
-/* Custom Card Styling */
-.control-card {
-    background: white;
+body {
+    background-color: #f8f9fa;
+    padding-top: 20px;
+}
+
+/* Status Containers */
+.status-card {
     border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     padding: 20px;
-    margin-bottom: 20px;
     text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
 }
 
-/* Pump Status Styles */
-#pump-status-container {
-    padding: 20px;
-    border-radius: 10px;
-    color: white;
-    font-weight: bold;
+.pump-status {
     font-size: 1.5rem;
-    transition: background-color 0.3s ease;
-}
-.pump-off {
-    background-color: #dc3545; /* Bootstrap Red */
-}
-.pump-on {
-    background-color: #198754; /* Bootstrap Green */
+    font-weight: bold;
+    color: white;
 }
 
-/* Custom Toggle Switch Styling */
-/* Long oval with circle inside */
+.pump-on {
+    background-color: #198754; /* Success Green */
+}
+
+.pump-off {
+    background-color: #dc3545; /* Danger Red */
+}
+
+.connection-status {
+    font-weight: bold;
+}
+
+/* Custom Toggle Switch (Long Oval) */
 .switch-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 10px;
+    margin: 10px;
 }
 
-.switch {
+.switch-title {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* The switch - the box around the slider */
+.toggle-switch {
     position: relative;
     display: inline-block;
     width: 80px;
     height: 40px;
 }
 
-.switch input {
+/* Hide default HTML checkbox */
+.toggle-switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
 
+/* The slider */
 .slider {
     position: absolute;
     cursor: pointer;
@@ -410,7 +424,7 @@ input:focus-visible + label {
     bottom: 0;
     background-color: #dc3545; /* Default Red (Off) */
     transition: .4s;
-    border-radius: 40px; /* Rounded oval */
+    border-radius: 34px;
 }
 
 .slider:before {
@@ -422,10 +436,10 @@ input:focus-visible + label {
     bottom: 4px;
     background-color: white;
     transition: .4s;
-    border-radius: 50%; /* Circle */
+    border-radius: 50%;
 }
 
-/* Checked State (On) */
+/* Checked state (ON) */
 input:checked + .slider {
     background-color: #198754; /* Green */
 }
@@ -434,8 +448,20 @@ input:checked + .slider:before {
     transform: translateX(40px);
 }
 
-/* Disabled state during API calls */
+/* Disabled state */
 input:disabled + .slider {
-    opacity: 0.6;
+    background-color: #ccc;
     cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Loading Overlay */
+#loader {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255,255,255,0.7);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
 }
