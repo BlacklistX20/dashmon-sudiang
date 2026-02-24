@@ -31,7 +31,7 @@
       <div class="row">
          <div class="col-4">
             <h3 class="fw-bold">Tangki 1</h3>
-            <h3 class="mb-3"><span id="tank3Value">0</span> L / 11162 L</h3>
+            <h3 class="mb-3"><span id="tank3Value">0</span> L / 11662 L</h3>
             <div class="tank-bar">
                <div id="tank3-level" class="tank-level d-flex justify-content-center align-items-center" style="background-color: #007bff;">
                   <h1 class="display-1 fw-bold" id="tank3-percent"></h1>
