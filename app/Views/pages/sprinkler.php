@@ -84,8 +84,8 @@
 <script>
 // Configuration
 const ARDUINO_IP = "http://192.168.10.177";
-const POLL_INTERVAL = 300000; // 5 minutes in milliseconds
-const REQUEST_TIMEOUT = 5000; // 5 seconds timeout to prevent freezing
+const POLL_INTERVAL = 3600000; // 1 hour in milliseconds
+const REQUEST_TIMEOUT = 30000; // 30 seconds timeout to prevent freezing
 
 // State
 let isRequestPending = false; 
@@ -235,7 +235,7 @@ window.addEventListener('DOMContentLoaded', () => {
     fetchStatus();
 
     // Requirement 6: Check every 5 minutes
-    setInterval(fetchStatus, POLL_INTERVAL);
+    // setInterval(fetchStatus, POLL_INTERVAL);
 });
 </script>
 <?= $this->endSection(); ?>

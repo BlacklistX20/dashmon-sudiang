@@ -148,8 +148,8 @@
         await fetch(url, { method: 'GET' });
     }
 
-    // Start Polling Loop (Every 2 seconds)
-    setInterval(checkStatus, 2000);
+    // Start Polling Loop (Every 1 hour)
+    // setInterval(checkStatus, 3600000);
     
     // Initial check
     checkStatus();
