@@ -28,6 +28,40 @@ $(document).on('click', '.detailSensor', function() {
 	setDetailSensor(detail.table);
 });
 
+let userInteracted = false;
+
+$(document).one('click', function() {
+	userInteracted = true;
+	console.log(userInteracted);
+	if (userInteracted) {
+		$('#vol-icon').removeClass('bx-volume-mute');
+		$('#vol-icon').addClass('bx-volume-full');
+	}
+});
+
+async function alarmSound() {
+	let data = await $.ajax({
+		url: baseUrl + "data/temp/perSecond",
+		dataType: "json",
+	})
+
+	let shouldPlay = false;
+	const audio = $('#alarm')[0];
+
+	data.forEach((item, index) => {
+		if (index !== 20 && index !== 21 && item.temp > 32) {
+			shouldPlay = true;
+		}
+	});
+
+	if (shouldPlay && userInteracted) {
+		audio.play().catch(err => console.warn("Playback error:", err));
+	} else {
+		audio.pause();
+		audio.currentTime = 0;
+	}
+}
+
 async function setLt2() {
 	let data = await $.ajax({
 		url: baseUrl + "data/temp/perSecond",
@@ -109,4 +143,5 @@ setInterval(() => {
 	setLt3();
 	setLt4();
 	setLt5();
+	alarmSound();
 }, 1000);

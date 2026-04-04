@@ -1,11 +1,12 @@
 <?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
+<audio id="alarm" src="<?= base_url('alarm.mp3');?>" preload="auto"></audio>
 <div class="container-fluid mx-1 py-1">
    <div class="row my-2">
       <div class="col-6 text-start">
          <h2 class="fw-bold">Suhu</h2>
-         <h2 class="fw-bold">Ruangan</h2>
+         <h2 class="fw-bold">Ruangan <i id="vol-icon" class="bx bx-volume-mute"></i></h2>
       </div>
       <div class="col-6 text-end">
          <h2 id="time" class="fw-bold"></h2>
